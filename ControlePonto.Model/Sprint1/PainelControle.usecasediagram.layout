@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="PainelControle">
+  <useCaseModelRootMoniker Id="8949e76a-175d-419d-accf-9734a4ed7bc6" />
+  <nestedChildShapes>
+    <actorShape Id="e3685706-ab78-466d-8ce3-580d23ef189e" absoluteBounds="0.625, 1.625, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="ff2e8667-98c4-4558-a77e-a24f97eb4f91" LastKnownName="Gerente" />
+      <relativeChildShapes />
+    </actorShape>
+    <useCaseShape Id="6220ff1f-01c8-42c1-b8ce-2eced450191b" absoluteBounds="2.125, 1.125, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="99f67be4-be7c-4f0f-8252-eb40e8e85c43" LastKnownName="Cadastrar feriado" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.125 : 1.80357142857143); (2.19087842893777 : 1.49903473458921)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="badcf1f5-319b-43e8-9ff6-e425e0d76793" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="e3685706-ab78-466d-8ce3-580d23ef189e" />
+        <useCaseShapeMoniker Id="6220ff1f-01c8-42c1-b8ce-2eced450191b" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="4503a171-1c80-48d5-90a8-42e973f91bc0" absoluteBounds="2.25, 2, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="8b952a77-8ccb-48aa-9901-ddbce0e0f5c2" LastKnownName="Gerar relatório" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.125 : 1.925); (2.28576165455737 : 2.15715233091147)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="a5463679-8189-49bb-9c18-917efba3bbce" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="e3685706-ab78-466d-8ce3-580d23ef189e" />
+        <useCaseShapeMoniker Id="4503a171-1c80-48d5-90a8-42e973f91bc0" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="c7bc54c0-298d-4180-9027-aa37b1e57cb5" absoluteBounds="2, 2.75, 1.125, 0.625" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="67b7ad3c-b7cf-4d53-87f2-be75d16ed63f" LastKnownName="Configurar jornada de trabalho" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.125 : 2.05092592592593); (2.2139500876743 : 2.8172241357708)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="6843cecd-ecb7-42cc-a856-29cc0662efdd" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="e3685706-ab78-466d-8ce3-580d23ef189e" />
+        <useCaseShapeMoniker Id="c7bc54c0-298d-4180-9027-aa37b1e57cb5" />
+      </nodes>
+    </useCaseAssociationConnector>
+  </nestedChildShapes>
+</useCaseDiagram>

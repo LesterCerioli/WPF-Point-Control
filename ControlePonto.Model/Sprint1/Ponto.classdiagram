@@ -1,0 +1,638 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="963f9b19-31e5-4fb2-bd20-94afd2f5d9c5" name="Ponto" linkedPackageId="5b056747-e14f-4900-9e15-0cbd123f1da5" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="4d53d7cd-134f-477e-b4d9-c8bb6636eeff">
+      <elementDefinition Id="933b82a3-ea71-416e-a5e0-d21fe59149b6" />
+      <body>Ex: Almoço, Intervalo I, etc...</body>
+      <annotatedElements>
+        <classMoniker Id="d8387d0c-335f-42ea-9335-5317665bb785" LastKnownName="TipoIntervalo" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="22f9eca7-9d5c-47c2-a8c0-563e5502603b" name="Funcionario" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="42ba7db5-eae7-4d65-97bc-4005b355f9dd" />
+        <generalsInternal>
+          <generalization Id="aeab5bad-eb18-4649-9145-74156b8e604c" isSubstitutable="false">
+            <classMoniker Id="71da6dc5-a885-4846-b426-3cb4f7bcda7e" LastKnownName="Usuario" />
+            <elementDefinition Id="1cb33f3a-9799-469c-802c-b5347778acbc" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="38af7a72-d24d-4f1f-892c-297a1182f9fe" name="RG" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3b0fcf6a-718b-4d2e-af60-192654ac3ab0" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="57ed6d80-3e81-41b1-9edd-5cd9b1793ca7" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+          <property Id="113d6731-e222-438d-9210-e0ee51bbb1e1" name="CPF" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0a641055-6afb-4e8c-9464-e65eee7abb3e" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="65fe7946-7dde-43e6-9f63-a98983b6df92" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8cb99635-a135-4bdf-ac31-250b2934d5b1" name="Intervalo" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="38ec4cae-cb62-4a13-ac77-ef8e314d3565" />
+        <targetEnds>
+          <association Id="f52a3953-da80-416c-932b-2c226f59932c" isDerived="false" sourceEndRoleName="Ponto" targetEndRoleName="TipoPonto" isLeaf="false" isAbstract="false">
+            <classMoniker Id="d8387d0c-335f-42ea-9335-5317665bb785" LastKnownName="TipoIntervalo" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a61a19b7-e951-4941-84a5-f6d451671e45" name="Ponto" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b188bec5-47f7-42cb-9f43-ba17332ea3f4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6c9fa45b-9717-4e43-9ee7-6e551a92b2c3" name="TipoPonto" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="5b47686f-6b51-416f-8472-2b8ac82bb9f5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f5747e2c-0bd4-46fe-8d7d-6e8a3e364a01" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="366d36c9-1005-4577-a187-57e58c2ffb5f" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d54df4d1-3f8c-47ad-b09a-b6a5ea59ef6b" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="7637c505-9fa2-4253-b680-0b9535967429" LastKnownName="ulong" />
+            </type_NamedElement>
+          </property>
+          <property Id="da0f2530-aec3-4928-85c6-f76edd6d61b4" name="Entrada" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6af39cd9-42f0-432d-82a6-9aa8c390a585" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="8123caec-dc38-4cf9-8aee-e872bd907b31" LastKnownName="Time" />
+            </type_NamedElement>
+          </property>
+          <property Id="ad4f40dc-08b5-470d-92d5-42fe98a6db97" name="Saida" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3a41772c-04fe-4444-bb29-d607b657b10f" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="86c8c650-39e2-4405-9b32-bcacc521b997" LastKnownName="Time" />
+            </type_NamedElement>
+          </property>
+          <property Id="2e76763b-a9a5-4330-9245-6edfabba22c8" name="Tipo" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0ad1330b-4893-4ccd-b354-a8ab592561ad" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="3c000ccf-4909-4ca7-8101-fe2b92a32c7b" LastKnownName="TipoIntervalo" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="57ed6d80-3e81-41b1-9edd-5cd9b1793ca7" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d8387d0c-335f-42ea-9335-5317665bb785" name="TipoIntervalo" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7d2688f1-d7bf-4906-8eea-433961e2861f" />
+        <ownedAttributesInternal>
+          <property Id="205ab314-4a01-402d-bed6-b0cea0659b0a" name="Nome" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d117db32-70b0-48b7-bc72-d3d81f05af85" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="57ed6d80-3e81-41b1-9edd-5cd9b1793ca7" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+          <property Id="b808f9fa-de97-44ed-936e-39cd2b3caefd" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="251dca61-b52d-4ea4-a31b-e759dcfec801" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="84a7e455-3f43-49b2-9220-c19874782628" LastKnownName="uint" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="84a7e455-3f43-49b2-9220-c19874782628" name="uint" isAbstract="false" isLeaf="false" cachedFullName="uint">
+        <elementDefinition Id="f0adb1ce-e86c-49fc-9d42-ede4a76603e3" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="7637c505-9fa2-4253-b680-0b9535967429" name="ulong" isAbstract="false" isLeaf="false" cachedFullName="ulong">
+        <elementDefinition Id="5a52a58b-3e77-4a69-9fb6-90625cf51e82" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="3c000ccf-4909-4ca7-8101-fe2b92a32c7b" name="TipoIntervalo" isAbstract="false" isLeaf="false" cachedFullName="ControlePonto.Model::TipoIntervalo">
+        <elementDefinition Id="7d2688f1-d7bf-4906-8eea-433961e2861f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="95977ff2-c31a-43d2-9928-3b8b31bb66ec" name="JornadaTrabalho" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="9d53dcc8-c777-46b8-aefb-f809a6360ad7" />
+        <targetEnds>
+          <association Id="8dcf767d-9585-41ac-be5e-c50bb8913d4e" isDerived="false" sourceEndRoleName="JornadaTrabalho" targetEndRoleName="DiaJornada" isLeaf="false" isAbstract="false">
+            <classMoniker Id="ca3c4c1e-3b2c-473a-b486-28df32088831" LastKnownName="DiaJornada" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9e5bf552-3ae5-4b36-acd7-53adec767169" name="JornadaTrabalho" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="0df860bb-0836-4f4e-ac8b-0cf078ea79a4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b0d2c7e8-1a1c-481f-8f16-5d9425ac52ca" name="DiaJornada" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <lowerValueInternal>
+                    <literalString Id="53f61e1c-84cf-4fc5-8d1f-88a5309160d6" name="Lower" value="7">
+                      <elementDefinition Id="2f3bad1a-6497-4a8e-bd50-51134606db39" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="1086bf37-7719-4745-9fd2-9dca90138452" name="Upper" value="7">
+                      <elementDefinition Id="ef1d86c8-40ff-496e-a33a-f0b78820a087" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="4991e8e7-c606-4f00-ba80-755d82b6cd08" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="afcf054c-0fdf-4291-ab36-130349f19af7" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="45b916f0-ed01-449a-94e3-edc539e32fa1" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f6f26592-42c4-432e-9916-e7855e48a57a" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="84a7e455-3f43-49b2-9220-c19874782628" LastKnownName="uint" />
+            </type_NamedElement>
+          </property>
+          <property Id="a359fe60-5afd-466d-be7b-c14bd1741aba" name="Dias" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c2e1ccf9-0b68-48b6-9e22-927d28c0bb19" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="4741e732-3b05-432b-bd7c-24051eda0408" LastKnownName="List&lt;DiaJornada&gt;" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="2f6797a3-64ff-4bcd-8299-388958713a3a" name="getDia" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="cfc352ef-d27f-48be-a5a5-c52435c76254" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b9bcd0fa-adea-4d67-b486-c1dd5bb3f0eb" name="int" direction="In" isUnique="false">
+                  <elementDefinition Id="9f63a35f-1bbb-4847-bd76-85943d9e1ccc" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="dc1c94d8-1c37-4545-91f8-fcd849646294" name="calcularHorasTrabalhoSemana" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e10f15f8-796c-4b52-896c-9de6fefd8f33" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="0c97a057-b8e4-4c16-84b9-5613f1969820" name="PontoService" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="bb100ca2-a928-4294-8621-91ada2da7f48" />
+        <targetEnds>
+          <association Id="1d5b0ecc-4503-4654-b2f8-d2f9e236141c" isDerived="false" sourceEndRoleName="PontoService" targetEndRoleName="PontoFactory" isLeaf="false" isAbstract="false">
+            <classMoniker Id="f3fe61f0-3419-4b11-a4f5-03ec0d6cdc17" LastKnownName="PontoFactory" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fe0b54f6-2e4f-4688-ab3e-c9f9cf0dce9a" name="PontoService" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2b3efa4f-bf8e-4cc9-841c-5b2a56f186d9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6fc19e1a-5372-4b58-958e-750de074d76c" name="PontoFactory" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="42a9bed1-5425-4510-a6ce-f2b46c3ddaf6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e5fa0c9d-5c64-4e95-b482-bf9786a62468" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="cf0b2355-5407-40ac-9d6d-2b5e3ff6b25d" name="SessaoLogin" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="673471cf-e9f7-4cfa-8a79-ec0a0b1a48bf" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="5cb3e4f0-4f16-44bb-95eb-dc9a42557bf9" LastKnownName="SessaoLogin" />
+            </type_NamedElement>
+          </property>
+          <property Id="94e48caa-e59b-4511-8dba-33eb62cec865" name="IPontoDiaRepositorio" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4533343f-18cc-458e-ba4d-fc925d36ec79" />
+          </property>
+          <property Id="429406eb-1185-4447-9b67-15203d7bd964" name="PontoFactory" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="dd9de24a-b886-4438-9578-1d0e4542f227" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="ba73d5c1-a3b1-43b4-9819-8c5dc9242ac4" name="iniciarDia" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f678ab3f-e481-4d13-bb39-90d0895b627c" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="1a85df84-8e90-48d8-b4f6-19663580a652" direction="Return" isUnique="false">
+                  <elementDefinition Id="7d389e85-a100-40a0-943e-fb27c00b89f8" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="a8b27bd2-c325-4297-99ca-e1f726b699bf" LastKnownName="PontoDia" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="157d540b-5c8a-4d4f-a765-c800dff42f8c" name="encerrarDia" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0b7dce6f-338c-4293-8839-277e7fa54ca0" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="5cb3e4f0-4f16-44bb-95eb-dc9a42557bf9" name="SessaoLogin" isAbstract="false" isLeaf="false" cachedFullName="ControlePonto.Model::SessaoLogin">
+        <elementDefinition Id="008942df-5736-4ce1-90a5-8e3c5998c473" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="32ccff46-150f-4bac-9949-49527c56254e" name="PontoDia" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="554c1342-22b4-49c8-8f78-416e642a5f36" />
+        <targetEnds>
+          <association Id="13c60d03-8499-4ddc-adae-09cdbff66d32" isDerived="false" sourceEndRoleName="PontoDia" targetEndRoleName="Funcionario" isLeaf="false" isAbstract="false">
+            <classMoniker Id="22f9eca7-9d5c-47c2-a8c0-563e5502603b" LastKnownName="Funcionario" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="09af20db-b480-4a3a-bdb5-4c6a203d38eb" name="PontoDia" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="28ca16f5-9553-42ba-8757-46bcd9a323ed" name="Lower" value="0">
+                      <elementDefinition Id="304f86eb-7c86-4806-9e7e-67721070d86b" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="20b22b9e-92d8-40ef-acf8-838217b00d26" name="Upper" value="N">
+                      <elementDefinition Id="7da3b50e-f84a-431f-af8e-95470b93c7f6" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="601b1fba-8cf8-4b1b-9520-b403f7562eb9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="358f4ec8-867e-465e-a76b-ba6ef27a9a97" name="Funcionario" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="281ed7d9-6346-4c4e-90b0-c0f789a6da2b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="04c608f1-ceac-4c86-bbde-a25f86c134ad" />
+          </association>
+          <association Id="19d4b730-bb0b-4040-bd47-e657b070d79a" isDerived="false" sourceEndRoleName="PontoDia" targetEndRoleName="Horario" isLeaf="false" isAbstract="false">
+            <classMoniker Id="8cb99635-a135-4bdf-ac31-250b2934d5b1" LastKnownName="Intervalo" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="96be5be4-718e-4344-b7fa-31e3954df226" name="PontoDia" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="bbf619aa-435e-4d3f-96e9-ca693875dfd5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8ce5c2bd-de43-4673-8950-e605da7198bb" name="Horario" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="86fed73f-299e-414a-b24d-04a439d1bae1" name="Lower" value="1">
+                      <elementDefinition Id="f337aeb1-9d47-403d-a420-27b14fb95315" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="5374f941-9581-46d5-91a6-361df55fdf68" name="Upper" value="N">
+                      <elementDefinition Id="6977b724-e1c7-4299-8c5b-a60ee1f6b563" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="d60b50fd-92df-4df5-9cf0-b41d60216b1e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d49a7895-6e42-4091-bfc1-445ea880ec12" />
+          </association>
+          <association Id="b7a420ae-f461-4941-a8fc-6e68d22991d1" isDerived="false" sourceEndRoleName="PontoDia" targetEndRoleName="JornadaTrabalho" isLeaf="false" isAbstract="false">
+            <classMoniker Id="95977ff2-c31a-43d2-9928-3b8b31bb66ec" LastKnownName="JornadaTrabalho" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="75424195-5a26-4d5d-b350-fb43cd9aebda" name="PontoDia" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b22334cb-94a4-4a41-a780-fa289fcf525b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="30e3ba8d-f42a-4959-b9d2-cd2049bc3e1e" name="JornadaTrabalho" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c85c9335-1421-4010-bbf4-9dfe41b38cda" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="465d7a4d-cbe2-4233-b80a-0d6a26892b26" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="fc76ea8a-e823-41e7-9b7b-8cab06f35801" name="Data" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c8574a26-9cb1-45ec-a304-fd3c97e245a4" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="21ad8b0c-0f58-4c74-93e4-a43f4432548e" LastKnownName="Date" />
+            </type_NamedElement>
+          </property>
+          <property Id="18e6ef53-2319-4fb5-9a77-477021625668" name="Funcionario" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5939b8eb-49ac-49dc-810d-c50fbf6896d4" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="edefb077-b8df-42da-b015-9fd8d3feaff8" LastKnownName="Funcionario" />
+            </type_NamedElement>
+          </property>
+          <property Id="2b995593-c2d6-47b3-aaef-3a2a4cd9c0b2" name="isFeriado" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="2758e552-3b9d-4134-82b4-e38e941c3706" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="e721e12b-fc81-4d66-af97-bb4ef99452b6" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
+          <property Id="0575751b-3a88-4d66-85bc-6ca3586a8bd9" name="PesoHoraExtra" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="cccb12ac-6bca-48c2-b3e4-e9be12324f1e" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="24e89ec2-9b1d-42d3-b70c-848d655cde94" LastKnownName="float" />
+            </type_NamedElement>
+          </property>
+          <property Id="054ab3ad-074a-4468-87a2-0e80feaa9b90" name="Intervalos" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="dbd0632c-ad96-4c43-8a94-613d3e3f16ab" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="58b78636-8749-46bc-8ce3-1ebaf5e9f087" LastKnownName="List&lt;Intervalo&gt;" />
+            </type_NamedElement>
+          </property>
+          <property Id="d3b42bb0-8d45-4429-bc7b-242f7c4e876e" name="Inicio" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="34255929-2a9e-4a2f-8a2e-0285de531e7f" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="78ba0853-4456-4396-af20-2c4592b60a79" LastKnownName="Time" />
+            </type_NamedElement>
+          </property>
+          <property Id="61f88e68-18a0-4f55-ae88-97d5775f2d18" name="Fim" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5764ee69-415e-4e7a-9ad1-faa51c093782" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="78ba0853-4456-4396-af20-2c4592b60a79" LastKnownName="Time" />
+            </type_NamedElement>
+          </property>
+          <property Id="70f639f7-d3dc-4904-9166-2cceaf31c290" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d6105f6b-ff9b-4668-8c88-51f03ee1d612" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="7637c505-9fa2-4253-b680-0b9535967429" LastKnownName="ulong" />
+            </type_NamedElement>
+          </property>
+          <property Id="e339f41e-ab6e-49ab-82e6-55ae834fa4f3" name="JornadaTrabalho" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="40f89ef3-0f55-4b06-a641-274b95852785" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="d9ae2ec2-bb54-46a8-a837-82195b095e20" LastKnownName="JornadaTrabalho" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="210f8de4-ca5c-4ddc-b49e-e74a724b4bfd" name="getIntervalo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e71b7ae3-9677-4e90-9a0e-2f391548d4fb" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="600d72db-84f8-4071-94b0-c138ea94f77d" direction="Return" isUnique="false">
+                  <elementDefinition Id="ccc9fb24-c309-475b-aeb0-74de40c98bc2" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d2a8d305-ca47-47c6-8e90-1360a0a65a69" LastKnownName="Intervalo" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a784b7a4-3b94-4bcc-bc9d-6dc936d741f6" name="TipoIntervalo" direction="In" isUnique="false">
+                  <elementDefinition Id="8c66cc6d-b9aa-444e-854e-ede8a6addadd" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="a34ca2e3-4017-483f-b9c9-65a566d6e46c" name="calcularHorasExtras" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6e021150-30d8-4c01-bd55-e9c792454a3c" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5e84ba21-4d31-4485-af7b-6cb4dbb94a16" direction="Return" isUnique="false">
+                  <elementDefinition Id="39aa935b-edec-4687-8107-555e1695f614" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="78ba0853-4456-4396-af20-2c4592b60a79" LastKnownName="Time" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="edefb077-b8df-42da-b015-9fd8d3feaff8" name="Funcionario" isAbstract="false" isLeaf="false" cachedFullName="ControlePonto.Model::Funcionario">
+        <elementDefinition Id="42ba7db5-eae7-4d65-97bc-4005b355f9dd" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e721e12b-fc81-4d66-af97-bb4ef99452b6" name="bool" isAbstract="false" isLeaf="false" cachedFullName="bool">
+        <elementDefinition Id="67023a7f-b678-4c90-9687-cb031c448971" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="24e89ec2-9b1d-42d3-b70c-848d655cde94" name="float" isAbstract="false" isLeaf="false" cachedFullName="float">
+        <elementDefinition Id="4d6e6cca-a36f-4ec8-96b6-08763f1a7620" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="d2a8d305-ca47-47c6-8e90-1360a0a65a69" name="Intervalo" isAbstract="false" isLeaf="false" cachedFullName="ControlePonto.Model::Intervalo">
+        <elementDefinition Id="38ec4cae-cb62-4a13-ac77-ef8e314d3565" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="78ba0853-4456-4396-af20-2c4592b60a79" name="Time" isAbstract="false" isLeaf="false" cachedFullName="Time">
+        <elementDefinition Id="e9141d20-78c4-4aa2-a018-79fc05c7bb3b" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="8123caec-dc38-4cf9-8aee-e872bd907b31" name="Time" isAbstract="false" isLeaf="false" cachedFullName="Time">
+        <elementDefinition Id="e9141d20-78c4-4aa2-a018-79fc05c7bb3b" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="86c8c650-39e2-4405-9b32-bcacc521b997" name="Time" isAbstract="false" isLeaf="false" cachedFullName="Time">
+        <elementDefinition Id="e9141d20-78c4-4aa2-a018-79fc05c7bb3b" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="21ad8b0c-0f58-4c74-93e4-a43f4432548e" name="Date" isAbstract="false" isLeaf="false" cachedFullName="Date">
+        <elementDefinition Id="9e7bc917-7e69-416a-a1da-beaa5bff7659" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="58b78636-8749-46bc-8ce3-1ebaf5e9f087" name="List&lt;Intervalo&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;Intervalo&gt;">
+        <elementDefinition Id="23d18c56-b6e2-4865-a49f-e7d8e39c2d2c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f3fe61f0-3419-4b11-a4f5-03ec0d6cdc17" name="PontoFactory" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8cee1fc2-232e-4a59-b628-659d43c3dc42" />
+        <ownedOperationsInternal>
+          <operation Id="cbbda6da-4af5-473d-9744-3d697aeaf04f" name="criarPonto" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="74a3eb93-f4c9-4bdf-8ddf-29f079c8b212" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4fe3d4ef-210b-4b66-a8b5-bf753c8d3dcc" direction="Return" isUnique="false">
+                  <elementDefinition Id="83740d65-df8f-45bd-9dc9-0cd1fc165da3" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="a8b27bd2-c325-4297-99ca-e1f726b699bf" LastKnownName="PontoDia" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="a8b27bd2-c325-4297-99ca-e1f726b699bf" name="PontoDia" isAbstract="false" isLeaf="false" cachedFullName="ControlePonto.Model::PontoDia">
+        <elementDefinition Id="554c1342-22b4-49c8-8f78-416e642a5f36" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ca3c4c1e-3b2c-473a-b486-28df32088831" name="DiaJornada" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a26036a6-86d9-45db-afd3-3c71d6e550b8" />
+        <ownedAttributesInternal>
+          <property Id="dab77744-6974-41fc-bea4-18fc984df2f7" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="950fec83-2783-4c90-a1ee-d562149d4f92" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="84a7e455-3f43-49b2-9220-c19874782628" LastKnownName="uint" />
+            </type_NamedElement>
+          </property>
+          <property Id="23683953-b1e5-43af-9bbf-a9db6fb07a7a" name="DiaSemana" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0a8dfe6a-5713-49cb-86c9-d67712445b88" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="93019085-db13-48de-8cd2-0de4369ec9f4" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+          <property Id="8bee7e28-17fc-4175-ba43-6dbe116a670f" name="Entrada" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3872fb0f-7b9d-4199-9d97-6bec61a78328" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="ffffa34a-8b14-497c-b030-f68f3d9f4766" LastKnownName="DateTime" />
+            </type_NamedElement>
+          </property>
+          <property Id="496b67ac-7525-4226-80fa-20ed0d4eaa08" name="Folga" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8ac5353d-c81d-47b9-a541-f09cc12df077" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="e36f706e-a08a-4bfb-9acf-f5217b035005" LastKnownName="Time" />
+            </type_NamedElement>
+          </property>
+          <property Id="2cafa73f-e190-4081-abca-24e58f4dd625" name="Saida" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="dac09648-a65b-402d-a642-b2d57f3f899e" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="3c2660f6-b4d3-44ec-85c3-20ca2458dc15" LastKnownName="DateTime" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="5f6d6360-7140-4164-bdc3-b84fe38d74fe" name="calcularHorasTrabalho" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1f002ff2-48dc-40a8-9ac2-55771054474b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7956dd4e-272e-4564-8395-9819d0937fbd" direction="Return" isUnique="false">
+                  <elementDefinition Id="32bc6ded-3141-4c98-884b-13e3ffdaa7af" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="78ba0853-4456-4396-af20-2c4592b60a79" LastKnownName="Time" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="93019085-db13-48de-8cd2-0de4369ec9f4" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
+        <elementDefinition Id="fbc58945-9d39-4339-bdcc-6a960e93aa41" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ffffa34a-8b14-497c-b030-f68f3d9f4766" name="DateTime" isAbstract="false" isLeaf="false" cachedFullName="DateTime">
+        <elementDefinition Id="33431b5d-2535-446c-9922-38ca22943f85" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e36f706e-a08a-4bfb-9acf-f5217b035005" name="Time" isAbstract="false" isLeaf="false" cachedFullName="Time">
+        <elementDefinition Id="e9141d20-78c4-4aa2-a018-79fc05c7bb3b" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="3c2660f6-b4d3-44ec-85c3-20ca2458dc15" name="DateTime" isAbstract="false" isLeaf="false" cachedFullName="DateTime">
+        <elementDefinition Id="33431b5d-2535-446c-9922-38ca22943f85" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="4741e732-3b05-432b-bd7c-24051eda0408" name="List&lt;DiaJornada&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;DiaJornada&gt;">
+        <elementDefinition Id="3a4d4872-2a8f-4d10-8fc7-53f0cc0bc47e" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="d9ae2ec2-bb54-46a8-a837-82195b095e20" name="JornadaTrabalho" isAbstract="false" isLeaf="false" cachedFullName="ControlePonto.Model::JornadaTrabalho">
+        <elementDefinition Id="9d53dcc8-c777-46b8-aefb-f809a6360ad7" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="71da6dc5-a885-4846-b426-3cb4f7bcda7e" name="Usuario" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6434be2a-e192-4071-b6dc-2cf7723044b9" />
+        <ownedAttributesInternal>
+          <property Id="b36e7c27-c420-418f-b3b3-29960b56a008" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="475892fb-7b42-4522-aeb2-d2c3edbe408f" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="2bfc52b1-7275-43fd-8a5c-ff1e7e0e97df" LastKnownName="uint" />
+            </type_NamedElement>
+          </property>
+          <property Id="ea494a35-0c1d-494b-ba56-a2c27bb26683" name="Login" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c1a37200-a669-4ace-ad5b-27fec41eaad6" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="2203e0ec-8af4-47ad-992f-3dc423da47b3" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+          <property Id="da9e2cd7-8c05-4c75-a4c9-0590beae5cb3" name="Senha" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a4e51e5e-32f5-461b-8fe3-1d42098059f8" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="cb7f9cf2-a4f6-4fe5-ad18-09d332301740" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+          <property Id="118ad396-b241-4c40-a6e8-5fb4c6ef108e" name="Nome" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8acd7a1e-3ffb-486d-a354-5af7dad7e359" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="246f00b3-eafc-4ab8-b423-448b8482bb1c" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="2bfc52b1-7275-43fd-8a5c-ff1e7e0e97df" name="uint" isAbstract="false" isLeaf="false" cachedFullName="uint">
+        <elementDefinition Id="f0adb1ce-e86c-49fc-9d42-ede4a76603e3" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="65fe7946-7dde-43e6-9f63-a98983b6df92" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="2203e0ec-8af4-47ad-992f-3dc423da47b3" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="cb7f9cf2-a4f6-4fe5-ad18-09d332301740" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="246f00b3-eafc-4ab8-b423-448b8482bb1c" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="5b056747-e14f-4900-9e15-0cbd123f1da5" name="ControlePonto.Model">
+    <elementDefinition Id="cd4a5682-54e6-4c65-a502-7c4e80604186" />
+    <profileInstances>
+      <packageHasProfileInstances Id="9348d936-f078-4923-a299-a18c4edcb3c3">
+        <profileInstance Id="84219355-e198-4a3a-9d26-84ff97eddbcd" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="0fc3563d-100c-4819-a7f1-63cbed5dc8aa">
+        <profileInstance Id="9d0e3c30-c713-4d0d-a859-e763a6867ebb" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

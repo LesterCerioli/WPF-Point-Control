@@ -1,0 +1,218 @@
+﻿<base:WindowBase x:Class="ControlePonto.WPF.window.feriado.CadastrarFeriadoWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:base="clr-namespace:ControlePonto.WPF.window"
+                 xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                 xmlns:frmwrk="clr-namespace:ControlePonto.WPF.framework"
+                 xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
+                 Title="Cadastrar feriado" 
+                 SizeToContent="WidthAndHeight">
+    
+    <Window.Resources>
+        <sys:String x:Key="strTipo">Tipo:</sys:String>
+        <sys:String x:Key="strTipoFixo">Fixo</sys:String>
+        <sys:String x:Key="strTipoRelativo">Relativo</sys:String>
+        <sys:String x:Key="strTipoEspecifico">Específico</sys:String>
+        <sys:String x:Key="strNome">Nome:</sys:String>
+        <sys:String x:Key="strData">Data:</sys:String>
+        <sys:String x:Key="strFechar">Fechar</sys:String>
+        <sys:String x:Key="strSalvar">Salvar</sys:String>
+        
+        <frmwrk:WeekDayConverter x:Key="weekConverter" />
+
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+        </Style>
+
+        <Style TargetType="RadioButton">
+            <Setter Property="Margin" Value="10,0" />
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="5,0,0,0" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Padding" Value="4" />
+            <Setter Property="Validation.ErrorTemplate">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <DockPanel>
+                            <StackPanel DockPanel.Dock="Top"
+                                        Orientation="Horizontal">
+                                <Grid Width="12" 
+                                      Height="12"
+                                      Margin="2,0">
+
+                                    <Ellipse Width="12" 
+                                                 Height="12" 
+                                                 Fill="Red" 
+                                                 HorizontalAlignment="Center"
+                                                 VerticalAlignment="Center">
+                                    </Ellipse>
+                                    <TextBlock Foreground="White"
+                                                   FontWeight="Heavy" 
+                                                   FontSize="8" 
+                                                   HorizontalAlignment="Center" 
+                                                   VerticalAlignment="Center" 
+                                                   TextAlignment="Center"
+                                                   Text="X"
+                                                   ToolTip="{Binding ElementName=ErrorAdorner, Path=AdornedElement.(Validation.Errors)[0].ErrorContent}"/>
+
+                                </Grid>
+                                <TextBlock Text="{Binding ElementName=ErrorAdorner, Path=AdornedElement.(Validation.Errors)[0].ErrorContent}" Margin="2,0"/>
+                            </StackPanel>
+                            <AdornedElementPlaceholder x:Name="ErrorAdorner" ></AdornedElementPlaceholder>
+                        </DockPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style TargetType="ComboBox">
+            <Setter Property="Margin" Value="5,5,0,0" />
+        </Style>
+
+        <Style TargetType="toolkit:DateTimePicker">
+            <Setter Property="Margin" Value="5,5,0,15" />
+            <Setter Property="Value" Value="{Binding Data, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+            <Setter Property="Format" Value="Custom" />
+            <Setter Property="FormatString" Value="{Binding DataStringFormat, UpdateSourceTrigger=PropertyChanged}" />
+            <Setter Property="AllowSpin" Value="False"/>
+            <Setter Property="TimePickerVisibility" Value="Collapsed" />
+            <Setter Property="Validation.ErrorTemplate">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <DockPanel>
+                            <StackPanel DockPanel.Dock="Bottom"
+                                        Orientation="Horizontal">
+                                <Grid Width="12" 
+                                      Height="12"
+                                      Margin="2,0">
+                                    
+                                    <Ellipse Width="12" 
+                                                 Height="12" 
+                                                 Fill="Red" 
+                                                 HorizontalAlignment="Center"
+                                                 VerticalAlignment="Center">
+                                    </Ellipse>
+                                    <TextBlock Foreground="White"
+                                                   FontWeight="Heavy" 
+                                                   FontSize="8" 
+                                                   HorizontalAlignment="Center" 
+                                                   VerticalAlignment="Center" 
+                                                   TextAlignment="Center"
+                                                   Text="X"
+                                                   ToolTip="{Binding ElementName=ErrorAdorner, Path=AdornedElement.(Validation.Errors)[0].ErrorContent}"/>
+                                    
+                                </Grid>
+                                <TextBlock Text="{Binding ElementName=ErrorAdorner, Path=AdornedElement.(Validation.Errors)[0].ErrorContent}" Margin="2,0"/>
+                            </StackPanel>
+                            <AdornedElementPlaceholder x:Name="ErrorAdorner" ></AdornedElementPlaceholder>
+                        </DockPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="3,8,3,0" />
+            <Setter Property="Padding" Value="8,4" />
+        </Style>
+    </Window.Resources>
+    
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="8*" />
+        </Grid.ColumnDefinitions>
+        
+        <Label Content="{StaticResource strTipo}" />
+        
+        <Label Grid.Row="1" 
+               Content="{StaticResource strNome}"
+               VerticalAlignment="Bottom"/>
+        
+        <Label Grid.Row="2"
+               Content="{StaticResource strData}"/>
+        
+        <StackPanel Grid.Column="1" 
+                    Orientation="Horizontal"
+                    VerticalAlignment="Center">
+            
+            <RadioButton Content="{StaticResource strTipoFixo}"
+                         IsChecked="{Binding TipoFixo, UpdateSourceTrigger=PropertyChanged}" />
+            
+            <RadioButton Content="{StaticResource strTipoRelativo}"
+                         IsChecked="{Binding TipoRelativo, UpdateSourceTrigger=PropertyChanged}"/>
+            
+            <RadioButton Content="{StaticResource strTipoEspecifico}"
+                         IsChecked="{Binding TipoEspecifico, UpdateSourceTrigger=PropertyChanged}"/>
+            
+        </StackPanel>
+        
+        <TextBox Grid.Row="1"
+                 Grid.Column="1"
+                 Text="{Binding Nome, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                 MaxLength="{Binding NomeMaxLenght}"
+                 VerticalAlignment="Bottom"/>
+        
+        <!-- FIXO OU ESPECÍFICO -->        
+        <toolkit:DateTimePicker Grid.Row="2"
+                                Grid.Column="1"
+                                Visibility="{Binding FixoOuEspecificoVisivel, UpdateSourceTrigger=PropertyChanged}" />
+        
+        <!-- RELATIVO -->
+        <Grid Grid.Row="2"
+              Grid.Column="1"
+              Visibility="{Binding RelativoVisivel, UpdateSourceTrigger=PropertyChanged}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <ComboBox ItemsSource="{Binding SequenciasDiaSemana}"
+                      SelectedItem="{Binding SequenciaDiaEscolhido}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding .}" />
+                            <TextBlock Text="ª" />
+                        </StackPanel>                        
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+
+            <ComboBox Grid.Column="1"
+                      ItemsSource="{Binding DiasSemana}"
+                      SelectedItem="{Binding DiaSemanaEscolhido, Converter={StaticResource weekConverter}}"/>
+
+            <toolkit:DateTimePicker  Grid.Row="1"
+                                     Grid.ColumnSpan="2" />
+            
+        </Grid>
+        
+        <StackPanel Grid.Row="3"
+                    Grid.ColumnSpan="2"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right">
+            
+            <Button Content="{StaticResource strFechar}"
+                    Command="{Binding FecharCommand}"/>
+
+            <Button Content="{StaticResource strSalvar}" 
+                    Command="{Binding SalvarCommand}" />
+
+        </StackPanel>            
+
+    </Grid>
+</base:WindowBase>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="f425e8d7-5880-4326-b1ba-e1edff79b2b2" name="Nhibernate" linkedPackageId="c48f9b8d-ceb6-4f99-b035-614f3f5d7047" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="3c252971-0c16-4b4a-80fb-75a8053c3f97">
+      <elementDefinition Id="0f68fb71-cc29-47b2-b511-59ea630babc0" />
+      <body>Singleton</body>
+      <annotatedElements>
+        <classMoniker Id="350638ed-1e18-4f94-af28-7246828a7af2" LastKnownName="DatabaseConfig" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="cdea553d-d36f-4e08-94b0-56d8823ac604">
+      <profileInstance Id="08ec802d-102f-458d-aa38-21b06b7d7c8b" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="a6f225e5-ef29-4fc9-87c2-553331f58faa">
+      <profileInstance Id="f6daff9f-d784-44fa-b651-85b704433591" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="350638ed-1e18-4f94-af28-7246828a7af2" name="DatabaseConfig" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0b8b7837-96c7-4f2e-bd9f-3458629421d2" />
+        <ownedAttributesInternal>
+          <property Id="005d5bae-bcc0-4622-ba10-e48ac94afd10" name="ServerHost" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b6c47b07-af93-4176-8d36-f171084ef902" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="894615b2-3068-4fa9-b878-54075b72b1c5" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="894615b2-3068-4fa9-b878-54075b72b1c5" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
+        <elementDefinition Id="a7a15471-36b9-4fa8-97ce-5dc7c2e5cf08" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="c48f9b8d-ceb6-4f99-b035-614f3f5d7047" name="ControlePonto.Model">
+    <elementDefinition Id="cd4a5682-54e6-4c65-a502-7c4e80604186" />
+  </package>
+</logicalClassDesignerModel>

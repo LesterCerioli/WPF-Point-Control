@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="64404530-90f4-4ffd-be55-38f51fe337e6" name="Sprint2" linkedPackageId="721e4d1c-8b56-42e5-8284-b26391448378" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="9bb76703-d33a-4177-b1bc-c0dffa8e1c72" name="Feriado" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3cf9dbc4-ba37-440c-bae5-3ab8d91d68bc" />
+        <ownedAttributesInternal>
+          <property Id="eb813cb4-cf82-4ae8-ab08-076133c2bcfa" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e9944e26-4a01-40ff-ac81-82508020726f" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="35fc8d07-81de-42d6-a412-eb904194756b" LastKnownName="uint" />
+            </type_NamedElement>
+          </property>
+          <property Id="dbaec4fa-cb9b-4fa8-9355-3f6c2fe62e38" name="Nome" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c3edcdbb-c358-4964-be85-b36c1fd228d4" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="16cf88c9-d587-472e-8f3c-1e07e71b4691" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="5d8c90b6-1555-4245-aa4c-01ad15ca6553" name="Mes" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c4a26d19-026c-4f75-bc62-83dd3fea6cb4" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="f525fd9f-60b9-4d03-9e16-4caa3cee8bd5" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="733f76f8-de4f-403b-952b-e026e69b7ffd" name="getData" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8e299e1c-1f23-41d3-8db3-4b625dea15d3" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="351bba9b-9998-47c8-80b8-8981cb454c9c" direction="Return" isUnique="false">
+                  <elementDefinition Id="7a46fd8a-caaa-4ccc-be6c-0f841b0a917f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="32bc0899-80fc-424a-b002-085d4c391f80" LastKnownName="DateTime" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="35fc8d07-81de-42d6-a412-eb904194756b" name="uint" isAbstract="false" isLeaf="false" cachedFullName="uint">
+        <elementDefinition Id="f0adb1ce-e86c-49fc-9d42-ede4a76603e3" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="16cf88c9-d587-472e-8f3c-1e07e71b4691" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
+        <elementDefinition Id="a7a15471-36b9-4fa8-97ce-5dc7c2e5cf08" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e430c1ab-11c1-43f8-abf5-88320ec7441e" name="FeriadoFixo" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6fe2c46e-6cbd-4370-b963-d44d5a467d3e" />
+        <generalsInternal>
+          <generalization Id="b3b7133f-3464-4113-8473-606e0477e246" isSubstitutable="false">
+            <classMoniker Id="9bb76703-d33a-4177-b1bc-c0dffa8e1c72" LastKnownName="Feriado" />
+            <elementDefinition Id="9a9db4ed-418c-40d9-b918-ecae414b7ec7" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="cd01aafe-e48b-40d4-8033-cb6769d0f3b6" name="Dia" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b93f22fc-1747-4dc9-b984-b34e34037e3a" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="876b2e79-3c1b-427b-8a3c-6bfd79c82567" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="876b2e79-3c1b-427b-8a3c-6bfd79c82567" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
+        <elementDefinition Id="fbc58945-9d39-4339-bdcc-6a960e93aa41" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2285251e-3e4f-4986-81a7-6f225ccbf27b" name="FeriadoRelativo" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="9da2da59-19e8-46cd-aa91-3e8e4c512116" />
+        <generalsInternal>
+          <generalization Id="2dbd1888-a50e-468a-b4f5-3e84857ed448" isSubstitutable="false">
+            <classMoniker Id="9bb76703-d33a-4177-b1bc-c0dffa8e1c72" LastKnownName="Feriado" />
+            <elementDefinition Id="d187a74f-f8cb-4d97-960a-fcf820672db1" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="9783290a-9202-4828-991c-64567d5057be" name="DiaSemana" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f486f311-c5ee-4eec-bcb1-8a509b1661d9" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="876b2e79-3c1b-427b-8a3c-6bfd79c82567" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+          <property Id="bd688cba-2c08-4655-a3a5-8886c48d22cc" name="Sequencia" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e460ce59-256f-40c3-b5a8-954e9998002e" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="876b2e79-3c1b-427b-8a3c-6bfd79c82567" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="f525fd9f-60b9-4d03-9e16-4caa3cee8bd5" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
+        <elementDefinition Id="fbc58945-9d39-4339-bdcc-6a960e93aa41" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="27e8c992-f3bf-472e-9ebf-76a7c04edb97" name="FeriadoEspecifico" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ee7d7a27-b7ce-499e-98c2-dcbca20b2c18" />
+        <generalsInternal>
+          <generalization Id="ad204133-a260-4790-9207-83952af1512a" isSubstitutable="false">
+            <classMoniker Id="9bb76703-d33a-4177-b1bc-c0dffa8e1c72" LastKnownName="Feriado" />
+            <elementDefinition Id="20c369ab-13e9-4f47-ba6d-f95d8e2bed68" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="17e85dde-95c1-451a-bd34-01af34147725" name="Dia" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="36120d67-8081-4410-bf9e-f22272874543" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="6dd1e80c-9f26-4c62-9f7b-17782e0c518f" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+          <property Id="1c4b133b-7cab-46f0-b63c-7c9dc89f93d9" name="Ano" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="9824b3fa-9379-452c-9882-6d879cf9d97e" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="876b2e79-3c1b-427b-8a3c-6bfd79c82567" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="6dd1e80c-9f26-4c62-9f7b-17782e0c518f" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
+        <elementDefinition Id="fbc58945-9d39-4339-bdcc-6a960e93aa41" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="5bc71b0c-a4c6-44c3-8448-de2333aa4e6f" name="Folga" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d00d0f1c-d47f-4cea-b5a0-9531bca0034c" />
+        <ownedAttributesInternal>
+          <property Id="3f29532e-e679-445f-875c-78ba4ce0d0fe" name="Id" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="cedcf9d4-3508-419c-b1cb-5d15cefd2f46" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="35fc8d07-81de-42d6-a412-eb904194756b" LastKnownName="uint" />
+            </type_NamedElement>
+          </property>
+          <property Id="340eda2a-1644-4f92-a27c-b5a126134a75" name="Descricao" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="403b73fa-33c9-4895-a7cf-03a26878ff4a" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="e71494ee-fbbf-486e-94b0-7794139efdab" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+          <property Id="748b765d-9440-414b-920d-df4bc4b39a9b" name="PontoDia" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="fa094f67-c89f-4db2-a604-16ff615f4331" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="47e68251-efb0-4a77-8402-4418265c7d3f" LastKnownName="PontoDia" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="32bc0899-80fc-424a-b002-085d4c391f80" name="DateTime" isAbstract="false" isLeaf="false" cachedFullName="DateTime">
+        <elementDefinition Id="33431b5d-2535-446c-9922-38ca22943f85" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e71494ee-fbbf-486e-94b0-7794139efdab" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="47e68251-efb0-4a77-8402-4418265c7d3f" name="PontoDia" isAbstract="false" isLeaf="false" cachedFullName="ControlePonto.Model::PontoDia">
+        <elementDefinition Id="554c1342-22b4-49c8-8f78-416e642a5f36" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="721e4d1c-8b56-42e5-8284-b26391448378" name="ControlePonto.Model">
+    <elementDefinition Id="cd4a5682-54e6-4c65-a502-7c4e80604186" />
+    <profileInstances>
+      <packageHasProfileInstances Id="bf9fcdc4-4994-40fc-9493-593d878d1ebc">
+        <profileInstance Id="6f33e446-68ba-4643-bed2-6735ab9df613" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="dc37711e-9f5d-45ee-9fe3-60ef89c9cba7">
+        <profileInstance Id="3f744b78-a80d-43c4-aef5-a56ed55120d2" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

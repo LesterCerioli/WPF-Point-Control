@@ -1,0 +1,134 @@
+﻿<base:WindowBase x:Class="ControlePonto.WPF.window.consulta.PontoFuncionarioWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:base="clr-namespace:ControlePonto.WPF.window"
+                 xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                 xmlns:frmwrk="clr-namespace:ControlePonto.WPF.framework"
+                 xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
+                 Title="{Binding Titulo}" 
+                 Height="300" 
+                 Width="300">
+    
+    <Window.Resources>
+        <sys:String x:Key="strSaida">Saída às </sys:String>
+        <sys:String x:Key="strEntrada">Entrada às</sys:String>
+        <sys:String x:Key="strSalvar">Salvar alterações</sys:String>
+        
+        <Style TargetType="Button">
+            <Setter Property="Padding" Value="10,5" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+
+        <Style TargetType="toolkit:TimeSpanUpDown">
+            <Setter Property="Margin" Value="5, 0" />
+            <Setter Property="Minimum" Value="00:00" />
+            <Setter Property="Maximum" Value="23:59" />
+            <Setter Property="Validation.ErrorTemplate">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <DockPanel>
+                            <Grid DockPanel.Dock="Right"
+                                      Width="12" 
+                                      Height="12"
+                                      Margin="2,0">
+                                <Ellipse Width="12" 
+                                             Height="12" 
+                                             Fill="Red" 
+                                             HorizontalAlignment="Center"
+                                             VerticalAlignment="Center">
+                                </Ellipse>
+                                <TextBlock Foreground="White"
+                                               FontWeight="Heavy" 
+                                               FontSize="8" 
+                                               HorizontalAlignment="Center" 
+                                               VerticalAlignment="Center" 
+                                               TextAlignment="Center"
+                                               Text="X"
+                                               ToolTip="{Binding ElementName=ErrorAdorner, Path=AdornedElement.(Validation.Errors)[0].ErrorContent}"/>
+                            </Grid>
+                            <AdornedElementPlaceholder x:Name="ErrorAdorner" ></AdornedElementPlaceholder>
+                        </DockPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <BooleanToVisibilityConverter x:Key="BoolToVis" />
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Label Content="{Binding Funcionario}"
+               FontWeight="SemiBold"
+               FontSize="16"/>
+        
+        <Label Grid.Row="1" 
+               Content="{Binding Data}"
+               FontWeight="SemiBold"
+               FontSize="14"/>
+
+        <Label Grid.Row="2">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{StaticResource strEntrada}"/>
+
+                <toolkit:TimeSpanUpDown Value="{Binding Entrada, ValidatesOnDataErrors=True}"
+                                        IsEnabled="{Binding AllowEdit}" />
+            </StackPanel>
+        </Label>
+
+        <ItemsControl Grid.Row="3"
+                      ItemsSource="{Binding Intervalos}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding TipoIntervalo.Nome}" />
+                        <TextBlock Margin="5,0,0,0"> das </TextBlock>
+
+                        <toolkit:TimeSpanUpDown Value="{Binding Entrada, ValidatesOnDataErrors=True}"
+                                        IsEnabled="{Binding DataContext.AllowEdit, RelativeSource={RelativeSource AncestorType={x:Type Window}}, Mode=OneTime}" />
+
+                        <TextBlock> às </TextBlock>
+
+                        <toolkit:TimeSpanUpDown Value="{Binding Saida, ValidatesOnDataErrors=True}"
+                                        IsEnabled="{Binding DataContext.AllowEdit, RelativeSource={RelativeSource AncestorType={x:Type Window}}, Mode=OneTime}" />
+
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <Label Grid.Row="4">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{StaticResource strSaida}"/>
+
+                <toolkit:TimeSpanUpDown Value="{Binding Saida, ValidatesOnDataErrors=True}"
+                                        IsEnabled="{Binding AllowEdit}" />
+            </StackPanel>
+        </Label>
+
+        <!-- Commands -->
+        <StackPanel Grid.Row="5"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="5">
+            
+            <Button Content="{StaticResource strSalvar}"
+                    Margin="0,0,5,0"
+                    Visibility="{Binding AllowEdit, Converter={StaticResource BoolToVis}}"
+                    Command="{Binding SalvarCommand}" />
+            
+            <Button Content="OK"
+                    Command="{Binding FecharCommand}"/>
+        </StackPanel>
+
+    </Grid>
+    
+</base:WindowBase>

@@ -1,0 +1,238 @@
+﻿<base:WindowBase x:Class="ControlePonto.WPF.window.relatorio.RelatorioWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:base="clr-namespace:ControlePonto.WPF.window"
+                 xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                 xmlns:frmwrk="clr-namespace:ControlePonto.WPF.framework"
+                 xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
+                 Title="Relatório" 
+                 Height="600" 
+                 Width="800">
+    
+    <Window.Resources>
+        
+        <sys:String x:Key="strEntrePeriodo">até</sys:String>
+        <sys:String x:Key="strExibir">Exibir</sys:String>
+        <sys:String x:Key="strExportar">Exportar (.xlsx)</sys:String>
+
+        <!-- ListView -->
+        <sys:String x:Key="strInfo">Descrição</sys:String>
+        <sys:String x:Key="strData">Data</sys:String>
+        <sys:String x:Key="strTrabalhado">Horas trabalhadas</sys:String>
+        <sys:String x:Key="strDevedoras">Horas devedoras</sys:String>
+        <sys:String x:Key="strExtra75">Extras</sys:String>
+        <sys:String x:Key="strExtra100">Extras 100%</sys:String>        
+
+        <!-- Rodapé -->
+        <sys:String x:Key="strTotalDiasTrabalhados">Total dias trabalhados:</sys:String>
+        <sys:String x:Key="strTotalHorasTrabalhadas">Total horas trabalhadas:</sys:String>
+        <sys:String x:Key="strTotalHorasDevedoras">Total horas devedoras:</sys:String>
+        <sys:String x:Key="strTotalDiferenca">Total horas devedoras - Total horas trabalhadas:</sys:String>
+        <sys:String x:Key="strTotalExtras">Total horas extras:</sys:String>
+        <sys:String x:Key="strTotalExtras100">Total horas extras 100%:</sys:String>
+        <sys:String x:Key="strTotalFeriadosTrabalhados">Total feriados trabalhados:</sys:String>
+        <sys:String x:Key="strTotalFolgas">Total folgas:</sys:String>
+        
+        <Style TargetType="Button">
+            <Setter Property="Padding" Value="10,0" />
+            <Setter Property="Margin" Value="10,5" />
+        </Style>
+
+        <Style TargetType="toolkit:DateTimePicker">            
+            <Setter Property="VerticalAlignment" Value="Center"/>            
+            <Setter Property="Format" Value="ShortDate" />
+            <Setter Property="TimePickerVisibility" Value="Collapsed" />
+        </Style>
+        
+        <Style TargetType="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="10" />
+        </Style>
+        
+        <Style TargetType="ComboBox">
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="ListViewItem">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="14" />
+            <EventSetter Event="MouseDoubleClick" Handler="listViewItem_MouseDoubleClick" />
+        </Style>
+
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        
+        <ComboBox ItemsSource="{Binding Funcionarios}"
+                  SelectedItem="{Binding FuncionarioEscolhido}"
+                  DisplayMemberPath="Nome"/>
+        
+        <StackPanel Grid.Column="2"
+                    Orientation="Horizontal">
+            
+            <toolkit:DateTimePicker Value="{Binding PeriodoInicio}"/>
+            
+            <TextBlock Text="{StaticResource strEntrePeriodo}" />
+            
+            <toolkit:DateTimePicker Value="{Binding PeriodoFim}"
+                                    Minimum="{Binding PeriodoFimMinimo, UpdateSourceTrigger=PropertyChanged}"/>
+            
+        </StackPanel>
+        
+        <Button Grid.Column="3" 
+                Content="{StaticResource strExibir}"
+                Command="{Binding ExibirCommand}"/>
+        
+        <Button Grid.Column="4" 
+                Content="{StaticResource strExportar}"
+                Click="ExportarExcel_Click"
+                IsEnabled="{Binding PodeExportar}"/>
+                
+        <ListView Grid.Row="1"
+                  Grid.ColumnSpan="5"
+                  ItemsSource="{Binding Dias, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedItem="{Binding DiaSelecionado}">
+                        
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="{StaticResource strData}"
+                                    DisplayMemberBinding="{Binding Data}" />
+
+                    <GridViewColumn Header="{StaticResource strInfo}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Info}"
+                                           Foreground="{Binding Cor}">
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding IsFolga}"
+                                                             Value="True">
+                                                    <Setter Property="FontWeight" Value="Bold"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="{StaticResource strTrabalhado}"
+                                    DisplayMemberBinding="{Binding HorasTrabalhadas}" />
+
+                    <GridViewColumn Header="{StaticResource strDevedoras}"
+                                    DisplayMemberBinding="{Binding HorasDevedoras}" />
+
+                    <GridViewColumn Header="{StaticResource strExtra75}"
+                                    DisplayMemberBinding="{Binding HorasExtras}" />
+
+                    <GridViewColumn Header="{StaticResource strExtra100}"
+                                    DisplayMemberBinding="{Binding HorasExtras100}" />
+                </GridView>
+            </ListView.View>
+
+        </ListView>
+        
+        <Grid Grid.Row="2"
+              Grid.ColumnSpan="5" Margin="0,1,0,-1" Grid.RowSpan="2">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.Resources>
+                <Style TargetType="Label">
+                    <Setter Property="HorizontalAlignment" Value="Right" />
+                    <Setter Property="VerticalAlignment" Value="Center" />  
+                    <Setter Property="MaxWidth" Value="170" />
+                    <Setter Property="FontWeight" Value="Medium" />
+                </Style>
+                
+                <Style TargetType="TextBlock">
+                    <Setter Property="MinWidth" Value="200" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                </Style>
+            </Grid.Resources>
+            
+            <Label Content="{StaticResource strTotalDiasTrabalhados}" />
+            <TextBlock Grid.Column="1"
+                       Text="{Binding TotalDiasTrabalhados}" />
+            
+            <Label Grid.Row="1" 
+                   Content="{StaticResource strTotalHorasTrabalhadas}" />
+            <TextBlock Grid.Row="1"
+                       Grid.Column="1"
+                       Text="{Binding TotalHorasTrabalhadas}" />                       
+            
+            <Label Grid.Row="2" 
+                   Content="{StaticResource strTotalHorasDevedoras}" />
+            <TextBlock Grid.Row="2"
+                       Grid.Column="1"
+                       Text="{Binding TotalHorasDevedoras}" />            
+            
+            <Label Grid.Row="3">
+                <TextBlock Text="{StaticResource strTotalDiferenca}"                           
+                           Height="Auto"
+                           TextWrapping="Wrap"
+                           TextAlignment="Right"
+                           MinWidth="0"
+                           Margin="0" />
+            </Label>
+            <TextBlock Grid.Row="3"
+                       Grid.Column="1"
+                       Text="{Binding DiferencaDevedorTrabalhado}" />
+            
+            <Label Grid.Column="2"
+                   Content="{StaticResource strTotalExtras}" />
+            <TextBlock Grid.Column="3"
+                       Text="{Binding TotalHorasExtras75}" />
+
+            <Label Grid.Row="1"
+                   Grid.Column="2"
+                   Content="{StaticResource strTotalExtras100}" />
+            <TextBlock Grid.Row="1"
+                       Grid.Column="3"
+                       Text="{Binding TotalHorasExtras100}" />
+            
+            <Label Grid.Row="2"
+                   Grid.Column="2"
+                   Content="{StaticResource strTotalFeriadosTrabalhados}" />
+            <TextBlock Grid.Row="2"
+                       Grid.Column="3"
+                       Text="{Binding TotalFeriadosTrabalhados}" />
+            
+            <Label Grid.Row="3"
+                   Grid.Column="2"
+                   Content="{StaticResource strTotalFolgas}" />
+            <TextBlock Grid.Row="3"
+                       Grid.Column="3"
+                       Text="{Binding TotalFolgas}" />
+            
+        </Grid>
+        
+    </Grid>
+</base:WindowBase>

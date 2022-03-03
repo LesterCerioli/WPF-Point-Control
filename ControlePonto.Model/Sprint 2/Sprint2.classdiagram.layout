@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.125, 8.5" name="Sprint2">
+  <logicalClassDesignerModelMoniker Id="64404530-90f4-4ffd-be55-38f51fe337e6" />
+  <nestedChildShapes>
+    <classShape Id="d61fffcd-c772-4988-8d65-24bbba786c74" absoluteBounds="3.375, 1.125, 1.5, 1.5429687152306246" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="9bb76703-d33a-4177-b1bc-c0dffa8e1c72" LastKnownName="Feriado" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="0e5e9ce0-82f1-488d-b4b2-0a5ee170dfdd" absoluteBounds="3.39, 1.5150000000000001, 1.4700000000000002, 0.68164060264825821" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="16069419-5d6a-4991-b6d2-cef5de5da6ab" absoluteBounds="3.39, 2.2066406026482586, 1.4700000000000002, 0.36132811258236563" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="df62653e-adf1-4776-bf62-1f111950b7c6" absoluteBounds="1.5, 3.25, 1.5, 1.0624999801317845" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="e430c1ab-11c1-43f8-abf5-88320ec7441e" LastKnownName="FeriadoFixo" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="130b7fb3-c406-4e37-94f5-fa52a626ae98" absoluteBounds="1.5150000000000001, 3.64, 1.4700000000000002, 0.36132811258236563" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="367ef121-4818-4186-b3ef-fb98109d3d8f" absoluteBounds="1.515, 4.0113281125823654, 1.4700000000000002, 0.20117186754941951" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <generalizationConnector edgePoints="[(2.25 : 3.25); (2.25 : 2.96796871523062); (4.125 : 2.96796871523062); (4.125 : 2.66796871523062)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110">
+      <generalizationMoniker Id="b3b7133f-3464-4113-8473-606e0477e246" />
+      <relativeChildShapes />
+      <nodes>
+        <classShapeMoniker Id="df62653e-adf1-4776-bf62-1f111950b7c6" />
+        <classShapeMoniker Id="d61fffcd-c772-4988-8d65-24bbba786c74" />
+      </nodes>
+    </generalizationConnector>
+    <classShape Id="75a196d1-88cd-427c-ae6d-0909043f453c" absoluteBounds="5.375, 3.25, 1.5, 1.2226562251647311" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="2285251e-3e4f-4986-81a7-6f225ccbf27b" LastKnownName="FeriadoRelativo" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="8a630958-a8c5-48c0-ab56-f352aabc0cff" absoluteBounds="5.39, 3.6399999999999997, 1.4700000000000002, 0.52148435761531187" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="13249360-0461-4c28-9158-4523d086da36" absoluteBounds="5.39, 4.171484357615312, 1.4700000000000002, 0.20117186754941951" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <generalizationConnector edgePoints="[(6.125 : 3.25); (6.125 : 2.96796871523062); (4.125 : 2.96796871523062); (4.125 : 2.66796871523062)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110">
+      <generalizationMoniker Id="2dbd1888-a50e-468a-b4f5-3e84857ed448" />
+      <relativeChildShapes />
+      <nodes>
+        <classShapeMoniker Id="75a196d1-88cd-427c-ae6d-0909043f453c" />
+        <classShapeMoniker Id="d61fffcd-c772-4988-8d65-24bbba786c74" />
+      </nodes>
+    </generalizationConnector>
+    <classShape Id="a066a8ca-977a-45e8-86d4-f1451a377e70" absoluteBounds="3.375, 3.25, 1.5, 1.2226562251647311" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="27e8c992-f3bf-472e-9ebf-76a7c04edb97" LastKnownName="FeriadoEspecifico" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="962de280-8454-4f44-ba30-84cbf3db639e" absoluteBounds="3.3899999999999997, 3.64, 1.4700000000000002, 0.52148435761531187" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="eab4be83-11ae-4bc8-8cee-4b39056b6309" absoluteBounds="3.39, 4.171484357615312, 1.4700000000000002, 0.20117186754941951" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <generalizationConnector edgePoints="[(4.125 : 3.25); (4.125 : 2.66796871523062)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110">
+      <generalizationMoniker Id="ad204133-a260-4790-9207-83952af1512a" />
+      <relativeChildShapes />
+      <nodes>
+        <classShapeMoniker Id="a066a8ca-977a-45e8-86d4-f1451a377e70" />
+        <classShapeMoniker Id="d61fffcd-c772-4988-8d65-24bbba786c74" />
+      </nodes>
+    </generalizationConnector>
+    <classShape Id="f0206a03-ddf3-4e86-840e-54bd2d212ad7" absoluteBounds="9, 1.25, 1.875, 1.3828124701976781" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="5bc71b0c-a4c6-44c3-8448-de2333aa4e6f" LastKnownName="Folga" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="95f1a093-d1da-405b-adeb-48eb428e152c" absoluteBounds="9.015, 1.6400000000000001, 1.8450000000000002, 0.68164060264825821" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="f046779e-337a-46b5-9c51-af25c18ab791" absoluteBounds="9.015, 2.3316406026482586, 1.8450000000000002, 0.20117186754941963" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</logicalClassDesignerDiagram>

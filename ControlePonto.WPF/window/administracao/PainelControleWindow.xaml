@@ -1,0 +1,78 @@
+﻿<base:WindowBase x:Class="ControlePonto.WPF.window.administracao.PainelControleWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:base="clr-namespace:ControlePonto.WPF.window"
+                 xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                 xmlns:frmwrk="clr-namespace:ControlePonto.WPF.framework"
+                 Title="{Binding Titulo}" 
+                 SizeToContent="WidthAndHeight">
+    
+    <Window.Resources>
+        <sys:String x:Key="strRelatorio">Gerar relatórios</sys:String>
+        <sys:String x:Key="strFeriado">Cadastrar feriado</sys:String>
+        <sys:String x:Key="strJornada">Configurar jornada de trabalho</sys:String>
+        <sys:String x:Key="strFolga">Controlar folgas</sys:String>
+        <sys:String x:Key="strPonto">Gerenciar pontos</sys:String>
+        
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Padding" Value="5,10" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Width" Value="100" />
+            <Setter Property="Height" Value="70" />            
+        </Style>
+        
+        <Style TargetType="TextBlock">
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" /> <!--Contains user info-->
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <Label Grid.ColumnSpan="2"
+               Content="{Binding UsuarioLogado}"
+               FontSize="16"
+               FontWeight="Bold"
+               HorizontalAlignment="Center" />
+        
+        <Button Grid.Row="1"
+                Command="{Binding RelatorioCommand}">
+            <TextBlock Text="{StaticResource strRelatorio}"/>
+        </Button>
+
+        <Button Grid.Row="1"
+                Grid.Column="1"
+                Command="{Binding PontoCommand}">
+            <TextBlock Text="{StaticResource strPonto}" />
+        </Button>
+
+        <Button Grid.Row="1"
+                Grid.Column="2"
+                Command="{Binding FolgaCommand}">
+            <TextBlock Text="{StaticResource strFolga}" />
+        </Button>            
+        
+        <Button Grid.Row="2"
+                Command="{Binding FeriadoCommand}">
+            <TextBlock Text="{StaticResource strFeriado}" />
+        </Button>            
+        
+        <Button Grid.Row="2"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Width="220"
+                Command="{Binding JornadaCommand}">
+            <TextBlock Text="{StaticResource strJornada}" />
+        </Button>
+    </Grid>
+</base:WindowBase>

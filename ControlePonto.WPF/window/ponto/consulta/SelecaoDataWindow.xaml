@@ -1,0 +1,35 @@
+﻿<base:WindowBase x:Class="ControlePonto.WPF.window.consulta.controle.SelecaoDataWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:base="clr-namespace:ControlePonto.WPF.window"
+                 xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                 xmlns:frmwrk="clr-namespace:ControlePonto.WPF.framework"
+                 xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
+                 Title="Selecionar data" 
+                 SizeToContent="WidthAndHeight">
+
+    <Window.Resources>
+        <sys:String x:Key="strConfirmar">OK</sys:String>
+    </Window.Resources>
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <toolkit:DateTimePicker Format="ShortDate"
+                                TimePickerVisibility="Collapsed"
+                                Value="{Binding Data}"
+                                Maximum="{Binding MaxData}"
+                                Width="200"
+                                Margin="5"/>
+        
+        <Button Grid.Row="1"
+                HorizontalAlignment="Right"
+                Content="{StaticResource strConfirmar}"
+                Command="{Binding ConfirmarCommand}"
+                Padding="5,2"
+                Margin="5"/>
+    </Grid>
+</base:WindowBase>

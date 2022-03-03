@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="8949e76a-175d-419d-accf-9734a4ed7bc6" name="PainelControle" linkedPackageId="892b1917-32d3-462b-b842-7c26d2ac0768" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="5055148f-d777-4bc4-9eed-1d4128ed847f">
+      <profileInstance Id="1b346bca-4eef-4888-97e8-7535873b0b18" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="0e3d46d1-800e-42b6-a85e-2febe9cdb8ad">
+      <profileInstance Id="426c6f62-df97-4854-aa56-4e1c43d94584" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="ff2e8667-98c4-4558-a77e-a24f97eb4f91" name="Gerente" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b7effbef-c3c5-446d-bb7b-7f85c4a23c9c" />
+        <targetEnds>
+          <association Id="a5463679-8189-49bb-9c18-917efba3bbce" isDerived="false" sourceEndRoleName="Gerente" targetEndRoleName="Gerar relatório" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="8b952a77-8ccb-48aa-9901-ddbce0e0f5c2" LastKnownName="Gerar relatório" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="714ce963-75fe-4030-9355-cdb1e5dd400f" name="Gerente" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="09e91bb4-ad10-4b7c-8036-cfc5f3934a14" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d4a35aa9-672b-494e-ba51-02b8fede97f4" name="Gerar relatório" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="74af8139-d7bf-4fd2-a0c9-8a2cb1a11cb1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c4d29a45-5c42-4c5b-bba6-524adb2f7225" />
+          </association>
+          <association Id="badcf1f5-319b-43e8-9ff6-e425e0d76793" isDerived="false" sourceEndRoleName="Gerente" targetEndRoleName="Cadastrar feriado" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="99f67be4-be7c-4f0f-8252-eb40e8e85c43" LastKnownName="Cadastrar feriado" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b324f61f-22d6-4cad-9426-43610ca3eab2" name="Gerente" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c33485b8-945b-4048-b782-b21ed33ff228" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="535d7cc0-86fe-4983-a116-94df2b471487" name="Cadastrar feriado" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b9accf11-f189-4018-a21c-6e30f9258271" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="26139881-449d-4ba8-946d-6c936f734197" />
+          </association>
+          <association Id="6843cecd-ecb7-42cc-a856-29cc0662efdd" isDerived="false" sourceEndRoleName="Gerente" targetEndRoleName="Configurar jornada de trabalho" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="67b7ad3c-b7cf-4d53-87f2-be75d16ed63f" LastKnownName="Configurar jornada de trabalho" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ae110628-a07e-4ee1-b6f0-a199589f05bc" name="Gerente" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c730a347-ce5a-4db9-8593-e59baf8b2e1d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e89243d1-f17c-4c61-ae5a-a914d143719f" name="Configurar jornada de trabalho" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4c960ab9-9c8e-4039-9a0e-a54d65fc0f6f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="7420246d-fe48-4119-983a-3536a5e7c230" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="99f67be4-be7c-4f0f-8252-eb40e8e85c43" name="Cadastrar feriado" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="efecb558-9080-4024-bb69-202185c74995" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="8b952a77-8ccb-48aa-9901-ddbce0e0f5c2" name="Gerar relatório" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="de4e7430-34c3-4d31-9993-c157d5dfcc10" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="67b7ad3c-b7cf-4d53-87f2-be75d16ed63f" name="Configurar jornada de trabalho" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="23018374-3773-4929-8775-7fa50f9db53f" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="892b1917-32d3-462b-b842-7c26d2ac0768" name="ControlePonto.Model">
+    <elementDefinition Id="cd4a5682-54e6-4c65-a502-7c4e80604186" />
+  </package>
+</useCaseModelRoot>
